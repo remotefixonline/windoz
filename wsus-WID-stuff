@@ -1,0 +1,23 @@
+#connect with sql management studio on 2016
+\\.\pipe\MICROSOFT##WID\tsql\query
+
+# show what queries are bogging it down.
+SELECT sqltext.TEXT,
+req.session_id,
+req.status,
+req.command,
+req.cpu_time,
+req.total_elapsed_time
+FROM sys.dm_exec_requests req
+CROSS APPLY sys.dm_exec_sql_text(sql_handle) AS sqltext 
+
+#to kill 
+kill id 
+
+#one of these will be the culprit.
+USE SUSDB
+GO
+exec spGetObsoleteUpdatesToCleanup
+
+#delete it
+exec spDeleteUpdate @localUpdateID=496390
