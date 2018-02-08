@@ -1,0 +1,2 @@
+##first close the program that is eating all of the c: drive, then cut and paste it to a drive with space, then do this.
+mklink /J C:\User\Username\AppData\Roaming\sourcefolder f:\newdirectory\destinationfolder
