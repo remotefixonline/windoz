@@ -1,0 +1,7 @@
+##single server
+Install-WindowsFeature –ConfigurationFilePath
+c:\temp\DeploymentConfigTemplate.xml
+
+##multiple boxes.
+Install-WindowsFeature –ConfigurationFilePath
+c:\temp\DeploymentConfigTemplate.xml -ComputerName $servername
