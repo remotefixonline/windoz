@@ -1,0 +1,2 @@
+##get updates by date.
+get-hotfix | where {$_.InstalledOn -gt "04/24/2018" -AND $_.InstalledOn -lt "04/30/2018" } | sort InstalledOn
