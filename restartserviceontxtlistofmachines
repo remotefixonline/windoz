@@ -1,2 +1,9 @@
 Get-Content C:\users\administrator\dclist.txt | ForEach-Object { Restart-Service -InputObject $(Get-Service -Computer $_ -Name kdc) }
 ##restarts the kdc service on all the machines in the dclist.txt file
+##reboot machine with local password
+
+NET USE \\MyServer\IPC$ mypassword /USER:myuser
+
+
+
+shutdown /r /t 3 /m \\ServerName
